@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const cors = require('./config/cors'); // Custom CORS config
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
+const path = require('path'); // Required for serving static files
 
 dotenv.config();
 
@@ -29,6 +30,12 @@ app.use(rateLimiter);
 
 // Session setup
 app.use(session);
+
+// Serve static files (images, videos, etc.) from 'src/assets' folder
+app.use('/assets', express.static(path.join(__dirname, 'src', 'assets')));
+
+// Serve static files (HTML, CSS, etc.) from 'src/pages' folder
+app.use('/pages', express.static(path.join(__dirname, 'src', 'pages')));
 
 // Routes
 app.use('/quote', quoteFormRoutes);

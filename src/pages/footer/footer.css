@@ -1,0 +1,80 @@
+/* Footer Styles */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 40px;
+}
+
+.business-info, .services, .quick-links {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+.quick-links {
+    margin-right: -90px; /* Move this section further to the right */
+}
+
+.business-info h3,
+.services h3,
+.quick-links h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.section-heading {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.subtext {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.icon {
+    width: 16px;
+    margin-right: 5px;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.social-media {
+    text-align: left;
+    flex: 1;
+    min-width: 300px;
+}
+
+.social-icons {
+    margin: 10px 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.social-link i {
+    font-size: 2rem;
+    color: #eef075;
+}
+
+.footer-line {
+    border: none;
+    border-top: 1px solid white;
+    margin: 20px 0;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+}

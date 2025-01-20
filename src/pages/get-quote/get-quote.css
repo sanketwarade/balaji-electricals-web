@@ -1,0 +1,360 @@
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f4f4f9, #dfe6e9);
+    color: #333;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #003366;
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #ffd700;
+  }
+
+  /* Hamburger Menu on the right */
+  .hamburger {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    z-index: 1100;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hamburger.active {
+    transform: rotate(90deg); /* Rotate the hamburger icon when active */
+  }
+
+  .hamburger i {
+    color: #fff;
+    font-size: 2rem;
+  }
+  /* Mobile menu */
+  #navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #00264d;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    justify-content: flex-start; /* Align items at the top */
+    padding-top: 60px; /* Add space at the top to avoid overlapping with the header */
+  }
+
+  /* When the navbar is active, bring it into view */
+  #navbar.active {
+    right: 0;
+  }
+
+  #navbar a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px 0;
+  }
+
+  #navbar a:hover {
+    color: #ffd700;
+  }
+
+  /* Close button inside the menu */
+  .close-btn {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  #navbar.active .close-btn {
+    opacity: 1; /* Fade in the close button when menu is active */
+  }
+
+  /* Media Queries for Mobile */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Show hamburger menu only on small screens */
+    }
+
+    nav.desktop-nav {
+      display: none; /* Hide navigation links on mobile */
+    }
+  }
+
+  section {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+  input,
+  textarea,
+  select {
+    margin-top: 8px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    margin-top: 25px;
+    padding: 12px;
+    background: #003366;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+    background: #1e90ff;
+    transform: scale(1.02);
+  }
+
+  .success,
+  .error {
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+  }
+
+  .success {
+    color: green;
+    font-weight: bold;
+  }
+
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+
+  .error-highlight {
+    border: 2px solid red;
+  }
+
+  footer {
+    background: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  footer a:hover {
+    color: #ffd700;
+  }
+
+  select[multiple] {
+    height: auto;
+    min-height: 100px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  .error-highlight {
+    border: 2px solid red;
+  }
+  /* Media Queries for Responsive Design */
+
+  /* Tablets and small devices */
+  @media (max-width: 1024px) {
+    header,
+    footer,
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 5px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    footer div {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  /* Mobile devices (max-width 768px) */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .logo h1 {
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+
+    /* Add this rule to shift the logo left */
+    .logo {
+      margin-left: -80px; /* Adjust the value as needed */
+    }
+
+    nav {
+      display: block;
+      text-align: center;
+    }
+
+    nav a {
+      display: block;
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+    .hamburger {
+      order: 2; /* Keep the hamburger menu to the right */
+      margin-left: auto; /* Push it to the far end */
+    }
+
+    section {
+      margin: 10px;
+      padding: 15px;
+    }
+
+    input,
+    textarea,
+    button {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 5px 0;
+    }
+
+    select[multiple] {
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+    }
+
+    footer div {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Very small screens (max-width 480px) */
+  @media (max-width: 480px) {
+    .logo h1 {
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+    }
+
+    section {
+      margin: 5px;
+      padding: 10px;
+    }
+
+    input,
+    textarea,
+    button {
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+    }
+  }

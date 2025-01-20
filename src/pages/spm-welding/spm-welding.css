@@ -1,0 +1,398 @@
+ /* Global reset */
+ * {
+    margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   min-height: 100vh;
+   overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header Styling */
+header {
+   background-color: #003366;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 20px;
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   width: 100%; /* Ensures the header spans the full width */
+   margin: 0; /* Remove any default margins */
+   flex-wrap: wrap; /* Adjust header layout for smaller devices */
+}
+
+/* Logo and Business Name */
+.logo-container {
+   display: flex;
+   align-items: center;
+}
+
+.logo {
+   width: 50px;
+   height: auto;
+   margin-right: 5px;
+}
+
+.business-name {
+   font-size: 1.3rem;
+   font-weight: bold;
+}
+
+/* Navigation Links */
+nav {
+   display: flex;
+   gap: 20px;
+}
+
+nav a {
+   color: white;
+   text-decoration: none;
+   font-size: 1rem;
+   font-weight: bold;
+   padding: 10px 15px; /* Add padding for better spacing */
+   transition: color 0.3s ease;
+}
+
+nav a:hover {
+   color: #1e90ff;
+   border-radius: 5px; /* Add rounded edges */
+}
+/* Hamburger Menu on the right */
+.hamburger {
+display: none; /* Hidden by default */
+position: absolute;
+top: 10px;
+right: 10px;
+z-index: 1100;
+cursor: pointer;
+transition: transform 0.3s ease-in-out;
+}
+.hamburger.active {
+transform: rotate(90deg); /* Rotate the hamburger icon when active */
+}
+
+.hamburger i {
+color: #fff;
+font-size: 2rem;
+}
+/* Mobile menu */
+#navbar {
+position: fixed;
+top: 0;
+right: -100%;
+width: 70%;
+height: 100%;
+background-color: #00264d;
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 15px;
+transition: right 0.3s ease;
+z-index: 1000;
+justify-content: flex-start; /* Align items at the top */
+padding-top: 60px; /* Add space at the top to avoid overlapping with the header */
+}
+
+/* When the navbar is active, bring it into view */
+#navbar.active {
+right: 0;
+}
+
+#navbar a {
+color: #fff;
+font-size: 1rem;
+font-weight: bold;
+text-decoration: none;
+margin: 10px 0;
+}
+
+#navbar a:hover {
+color: #FFD700;
+}
+
+/* Close button inside the menu */
+.close-btn {
+align-self: flex-end;
+font-size: 1.5rem;
+color: #fff;
+cursor: pointer;
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+}
+#navbar.active .close-btn {
+opacity: 1; /* Fade in the close button when menu is active */
+}
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+.hamburger {
+display: block; /* Show hamburger menu only on small screens */
+}
+
+nav.desktop-nav {
+display: none; /* Hide navigation links on mobile */
+}
+}
+
+/* Main container for text and video */
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   padding: 40px;
+   justify-content: center;
+}
+
+/* Text content on left */
+.text-content {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background: linear-gradient(135deg, #76cbf3, #0293e0);
+   color: #070707;
+   padding: 20px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+   border-radius: 15px;
+   animation: slideInLeft 1s ease-out;
+   height: 600px; /* Increased height */
+}
+
+.text-content h2 {
+   font-size: 2rem;
+   margin-bottom: 20px;
+}
+
+.text-content p {
+   font-size: 1.2rem;
+   line-height: 1.8;
+}
+
+/* Video content on right */
+.video-container {
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+   border-radius: 15px;
+   position: relative;
+   animation: fadeInUp 1s ease-out;
+   height: 600px; /* Increased height */
+}
+
+.video-container video {
+   width: 100%;
+   height: 100%; /* Adjust video to fill the container */
+   object-fit: cover;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.request-custom-solution {
+   background-color: #f0f8ff;
+   padding: 40px;
+   margin: 20px auto;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   text-align: center;
+   width: 80%;
+}
+
+.request-custom-solution h2 {
+   color: #003366;
+   font-size: 2rem;
+   margin-bottom: 20px;
+}
+
+.request-custom-solution p {
+   font-size: 1.2rem;
+   color: #333;
+   margin-bottom: 20px;
+}
+
+.request-custom-solution a {
+   display: inline-block;
+   background-color: #1e90ff;
+   color: white;
+   padding: 15px 30px;
+   font-size: 1.2rem;
+   font-weight: bold;
+   text-decoration: none;
+   border-radius: 50px;
+   transition: background-color 0.3s ease;
+}
+
+.request-custom-solution a:hover {
+   background-color: #0056b3;
+}
+
+.get-quote {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   background-color: #1e90ff;
+   color: white;
+   padding: 10px 20px;
+   font-weight: bold;
+   text-decoration: none;
+   border-radius: 50px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   z-index: 10;
+}
+
+.get-quote:hover {
+   background-color: #0056b3;
+   transform: translateY(-5px);
+}
+
+footer {
+   background: #003366;
+   color: white;
+   padding: 20px;
+   text-align: center;
+   width: 100%; /* Ensures the footer spans the full width */
+   margin: 0; /* Remove any default margins */
+   box-sizing: border-box; /* Prevent any padding from affecting the width */
+}
+
+footer a {
+   color: white;
+   text-decoration: none;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+   from {
+       opacity: 0;
+       transform: translateY(20px);
+   }
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+@keyframes slideInLeft {
+   from {
+       opacity: 0;
+       transform: translateX(-50px);
+   }
+   to {
+       opacity: 1;
+       transform: translateX(0);
+   }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+   
+   .container {
+       padding: 20px;
+       flex-direction: column;
+       align-items: center;
+       justify-content: flex-start;
+   }
+
+   .text-content,
+   .video-container {
+       height: auto;
+       width: 100%;
+       margin-bottom: 20px;
+   }
+
+   .text-content h2 {
+       font-size: 1.5rem;
+   }
+
+   .text-content p {
+       font-size: 1rem;
+   }
+
+   .request-custom-solution {
+       width: 90%;
+   }
+
+   .get-quote {
+       font-size: 1rem;
+       padding: 8px 16px;
+   }
+
+   footer {
+       padding: 20px;
+   }
+
+   footer div {
+       flex-direction: column;
+       align-items: center;
+       gap: 20px;
+   }
+
+   footer .quick-links,
+   footer .services {
+       text-align: center;
+   }
+
+   footer .quick-links a,
+   footer .services a {
+       font-size: 1rem;
+   }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+   
+   .logo-container {
+       flex-direction: row;
+       align-items: center;
+       justify-content: flex-start;
+       margin-left: 0%;
+   }
+
+   .logo {
+       width: 40px;
+       margin-right: 10px; /* Space between logo and business name */
+       
+   }
+   .business-name{
+       font-size: 1.2rem; /* Adjust the business name size for mobile */
+   }
+
+   nav {
+       flex-direction: column;
+       align-items: center;
+   }
+
+   nav a {
+       font-size: 1.2rem;
+       margin-bottom: 10px;
+   }
+
+   .text-content h2 {
+       font-size: 1.2rem;
+   }
+
+   .text-content p {
+       font-size: 0.9rem;
+   }
+
+   .request-custom-solution {
+       width: 100%;
+       padding: 20px;
+   }
+
+   .get-quote {
+       font-size: 1.2rem;
+       padding: 12px 24px;
+   }
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Quote</title>
+    <link rel="icon" href="/src/assets/images/favicon.ico" type="image/x-icon">
+
+    
+    <!-- Add jQuery from a CDN -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+    <script src="/src/pages/get-quote/get-quote.js"></script>
+  
+    <link rel="stylesheet" href="/src/pages/get-quote/get-quote.css" />
+    <link rel="stylesheet" href="/src/pages/footer/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img
+        src="/src/assets/images/BALAJI ELECTRICALS LOGO.jpg"
+        alt="BALAJI ELECTRICALS Logo"
+        loading="eager"
+      />
+
+      <h1>BALAJI ELECTRICALS</h1>
+    </div>
+    <!-- Hamburger Menu (hidden by default on desktop) -->
+    <div class="hamburger" onclick="openMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a href="/src/pages/index/index.html">Home</a>
+        <a href="/src/pages/about/about.html">About Us</a>
+        <a href="/src/pages/index/index.html">Product & Solutions</a>
+        <a href="/src/pages/contact/contact.html">Contact Us</a>  
+    </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <nav id="navbar">
+      <div class="close-btn" onclick="closeMenu()">
+        <i class="fas fa-times"></i>
+      </div>
+      <a href="/src/pages/index/index.html">Home</a>
+        <a href="/src/pages/about/about.html">About Us</a>
+        <a href="/src/pages/index/index.html">Product & Solutions</a>
+        <a href="/src/pages/contact/contact.html">Contact Us</a>  
+      <a href="/src/pages/gallery/gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Enter Your Details</h2>
+    <form
+      id="quoteForm"
+      action="http://localhost:3000/submit-quoteForm"
+      method="POST"
+    >
+      <fieldset>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your full name"
+          required
+        /><br /><br />
+
+        <label for="company">Company Name:</label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          placeholder="Company Name"
+          required
+        /><br /><br />
+
+        <label for="contact">Contact Number:</label>
+        <input
+          type="tel"
+          id="contact"
+          name="contact"
+          placeholder="Your contact number"
+          required
+        /><br /><br />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your email address"
+          required
+        /><br /><br />
+
+        <label for="machines">Machines/Parts:</label>
+        <select id="machines" name="machines[]" multiple required>
+          <option value="MIG Welding Machine">MIG Welding Machine</option>
+          <option value="TIG Welding Machine">TIG Welding Machine</option>
+          <option value="SPM Welding Machine">SPM Welding Machine</option>
+          <option value="Rotary Positioner">Rotary Positioner</option>
+          <option value="X-Y Linear Slides">X-Y Linear Slides</option>
+          <option value="Spare Parts">Spare Parts</option>
+          <option value="Control Panels">Control Panels</option></select
+        ><br /><br />
+
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Additional details or requirements"
+          required
+        ></textarea
+        ><br /><br />
+
+        <button
+          type="submit"
+          id="submitBtn"
+          aria-label="Submit the quote form"
+        >
+          Submit
+        </button>
+      </fieldset>
+    </form>
+    <p
+      class="success"
+      id="successMessage"
+      aria-live="polite"
+      style="display: none"
+    >
+      Your quote request has been submitted successfully!
+    </p>
+    <p
+      class="error"
+      id="errorMessage"
+      aria-live="assertive"
+      style="display: none"
+    >
+      There was an error submitting your request. Please try again.
+    </p>
+  </section>
+
+        <!-- Footer -->
+        <footer>
+          <div class="footer-container">
+              <!-- Business Info -->
+              <div class="business-info">
+                  <h3>BALAJI ELECTRICALS</h3>
+                  <p class="section-heading">
+                      <img src="/src/assets/images/map.png" alt="Address Icon" class="icon"> Head Office:
+                  </p>
+                  <p class="subtext">Morwadi, Pimpri, Pune 411018</p>
+                  <p class="section-heading">
+                      <img src="/src/assets/images/map.png" alt="Address Icon" class="icon"> Manufacturing Plant:
+                  </p>
+                  <p class="subtext">Swapnil Industries, Bhosari MIDC, Pimpri-Chinchwad 411026</p>
+                  <p class="section-heading">
+                      <img src="/src/assets/images/gmail.png" alt="Email Icon" class="icon"> Email:
+                  </p>
+                  <p class="subtext">
+                      <a href="mailto:balaji.elect09@gmail.com" class="link">balaji.elect09@gmail.com</a>
+                  </p>
+                  <p class="section-heading">
+                      <img src="/src/assets/images/mobile.png" alt="Phone Icon" class="icon"> Mobile:
+                  </p>
+                  <p class="subtext">
+                      <a href="tel:+918888834724" class="link">+91 8888834724</a>
+                  </p>
+                  <p class="subtext">
+                      <a href="tel:+919028888638" class="link">+91 90288888638</a>
+                  </p>
+              </div>
+      
+              <!-- Services Offered -->
+              <div class="services">
+                  <h3>Our Services</h3>
+                  <ul>
+                      <li>- Sales and Services of Welding Machines</li>
+                      <li>- Control Panels and Automation</li>
+                      <li>- Manufacturing Welding SPM and Rotary Positioners</li>
+                      <li>- Industry-specific Automation Solutions</li>
+                  </ul>
+              </div>
+      
+              <!-- Quick Links -->
+              <div class="quick-links">
+                  <h3>Quick Links</h3>
+                  <ul>
+                      <li><a href="/src/pages/index/index.html" class="link">Home</a></li>
+                      <li><a href="/src/pages/about/about.html" class="link">About Us</a></li>
+                      <li><a href="/src/pages/contact/contact.html" class="link">Contact Us</a></li>
+                      <li><a href="/src/pages/index/index.html" class="link">Products & Solutions</a></li>
+                      <li><a href="/src/pages/gallery/gallery.html" class="link">Gallery</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="social-media">
+              <h3>Follow Us On</h3>
+              <div class="social-icons">
+                  <a href="https://www.linkedin.com/company/balajielectricals/" target="_blank" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                  </a>
+              </div>
+          </div>
+      
+          <!-- Horizontal Line -->
+          <hr class="footer-line">
+          <p class="footer-text">&copy; 2024 BALAJI ELECTRICALS | 
+              <a href="/src/pages/terms/terms.html" class="link">Terms of Use</a> | 
+              <a href="/src/pages/privacy/privacy.html" class="link">Privacy Policy</a>
+          </p>
+      </footer>
+      
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #013a72, #0261c7);
+    color: #fff;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #00264d;
+    color: #fff;
+  }
+
+  header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  header .logo img {
+    height: 50px;
+    margin-right: 10px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #ffd700;
+  }
+
+  nav a.active {
+    color: WHITE;
+  }
+
+  /* Hamburger Menu on the right */
+  .hamburger {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 20px;
+    right: -15px;
+    z-index: 1100;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hamburger.active {
+    transform: rotate(90deg); /* Rotate the hamburger icon when active */
+  }
+
+  .hamburger i {
+    color: #fff;
+    font-size: 2rem;
+  }
+  /* Mobile menu */
+  #navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #00264d;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    justify-content: flex-start; /* Align items at the top */
+    padding-top: 60px; /* Add space at the top to avoid overlapping with the header */
+  }
+
+  /* When the navbar is active, bring it into view */
+  #navbar.active {
+    right: 0;
+  }
+
+  #navbar a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px 0;
+  }
+
+  #navbar a:hover {
+    color: #ffd700;
+  }
+
+  /* Close button inside the menu */
+  .close-btn {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  #navbar.active .close-btn {
+    opacity: 1; /* Fade in the close button when menu is active */
+    transform: translateX(
+      -70px
+    ); /* Move the close button slightly to the left */
+  }
+
+  /* Media Queries for Mobile */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Show hamburger menu only on small screens */
+    }
+
+    nav.desktop-nav {
+      display: none; /* Hide navigation links on mobile */
+    }
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    flex: 1;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+  }
+
+  .contact-info {
+    margin: 30px 0;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+  }
+
+  .contact-item i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #ffd700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .contact-item a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .contact-item a:hover {
+    color: #ffeb3b;
+  }
+
+  .map-container {
+    margin-top: 30px;
+  }
+
+  .map {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .form-container {
+    margin-top: 30px;
+    text-align: left;
+  }
+
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container label {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+  }
+
+  .form-container input,
+  .form-container textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .form-container button {
+    background-color: #ffd700;
+    color: #003366;
+    padding: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .form-container button:hover {
+    background-color: #ffeb3b;
+  }
+
+  footer {
+    text-align: center;
+    background: #003366;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+
+  /* Additional styles for the submission message */
+  .submission-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    display: none; /* Initially hidden */
+    text-align: center;
+  }
+
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    header .nav {
+      gap: 35px;
+      font-weight: bold;
+      color: white;
+      display: flex;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .container {
+      margin: 40px 20px;
+      padding: 15px;
+    }
+
+    .form-container form {
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    footer {
+      font-size: 0.8rem;
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    header .logo {
+      font-size: 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: -100px;
+    }
+
+    header .nav {
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .container {
+      width: 90%;
+      margin: 89px 20px;
+      padding: 20px;
+    }
+
+    .map {
+      height: 250px;
+    }
+
+    .contact-item i {
+      font-size: 1.2rem;
+    }
+
+    .form-container label {
+      font-size: 0.9rem;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      font-size: 0.9rem;
+    }
+
+    footer {
+      font-size: 0.8rem;
+      padding: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header {
+      width: 110%;
+    }
+    header .logo {
+      font-size: 1.5rem;
+      flex-direction: row;
+      align-items: center;
+
+      margin-right: 100px;
+    }
+
+    header .nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hamburger {
+      order: 2; /* Keep the hamburger menu to the right */
+      margin-left: auto; /* Push it to the far end */
+    }
+
+    .container {
+      margin: 30px 30px;
+      padding: 10px;
+    }
+
+    .map {
+      height: 200px;
+    }
+
+    .contact-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .contact-item i {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      font-size: 0.9rem;
+    }
+
+    footer {
+      font-size: 0.7rem;
+      padding: 10px;
+      width: 108%;
+    }
+  }

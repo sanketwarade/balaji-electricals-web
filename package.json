@@ -5,7 +5,8 @@
     "description": "Backend for BALAJI ELECTRICALS WEB",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node server.js",
+        "build": "echo 'No build step required'"
     },
     "dependencies": {
         "@sendgrid/mail": "^8.1.4",
